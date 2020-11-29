@@ -1,6 +1,7 @@
 package pl.pwr.andz1.plantcatalog.plant
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,10 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import pl.pwr.andz1.plantcatalog.DetailsActivity
 import pl.pwr.andz1.plantcatalog.R
+
+const val PLANT_NAME_KEY = "pl.pwr.andz1.plantcatalog.PLANT_NAME"
 
 class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val context: Context) :
     RecyclerView.Adapter<PlantsAdapter.ViewHolder>() {
@@ -53,6 +57,13 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
         }
 
         handleFavButton(plant, favButton)
+
+        viewHolder.itemView.setOnClickListener {
+            val intent: Intent = Intent(context, DetailsActivity::class.java).apply {
+                putExtra(PLANT_NAME_KEY, plant.id_name)
+            }
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
