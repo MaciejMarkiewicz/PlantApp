@@ -1,14 +1,29 @@
 <resources>
-	<string name="app_name">PlantCatalog</string>
+	<string name="app_name">Plant Catalog</string>
+	<string name="no_plants">No plants, you killed them all!</string>
 
 	<!-- Plant data !-->
-	<string name="alocasia_full_name">Alocasia</string>
+	<string name="category_name_palm">Palm</string>
+	<string name="category_name_succulent">Succulent</string>
+	<string name="category_name_green">Green plant</string>
+	<string name="category_name_pot_plant">Pot plant</string>
+
+	<string-array name="catrgories">
+		<item>All</item>
+		<item>Palms</item>
+		<item>Succulents</item>
+		<item>Green plants</item>
+		<item>Pot plants</item>
+	</string-array>
+
+	<!-- Plant data !-->
+	<string name="alocasia_full_name">Alocasia pink dragon</string>
 	<string name="aloe_full_name">Aloe vera</string>
-	<string name="crassula_full_name">Crassula</string>
-	<string name="palm_full_name">Palm</string>
-	<string name="sansevieria_full_name">Sansevieria</string>
-	<string name="sophora_full_name">Sophora</string>
-	<string name="schefflera_full_name">Schefflera</string>
+	<string name="crassula_full_name">Crassula arborescens</string>
+	<string name="palm_full_name">Aracea palm</string>
+	<string name="sansevieria_full_name">Sansevieria trifasciata</string>
+	<string name="sophora_full_name">Sophora prostata</string>
+	<string name="schefflera_full_name">Schefflera arboricola</string>
 	<string name="zamioculcas_full_name">Zamioculcas</string>
 
 	<string name="alocasia_desc">Alocasia Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus adipisci, at consequatur debitis deserunt dolore dolorem dolorum enim eum excepturi fugiat illum libero magnam nam sint sit soluta voluptatem.</string>
@@ -19,5 +34,6 @@
 	<string name="sophora_desc">Shphora Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi deleniti deserunt dolores eligendi eveniet expedita facere inventore ipsa magnam maxime molestiae nemo nesciunt rem repellat sequi ullam, vel, velit!</string>
 	<string name="schefflera_desc">Schefflera Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores aspernatur debitis, delectus deleniti dolorum facere harum illum itaque libero, magnam maxime minus mollitia nam necessitatibus provident saepe sequi soluta?</string>
 	<string name="zamioculcas_desc">Zamioculcas Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores at autem deserunt dolorem, eligendi expedita fugit, illum ipsam laudantium minus necessitatibus officiis quas rem tenetur unde veniam veritatis vero.</string>
+	<string name="favourite_only">Favourite only</string>
 
 </resources>

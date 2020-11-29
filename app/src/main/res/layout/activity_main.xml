@@ -14,13 +14,21 @@
 		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 		<androidx.appcompat.widget.Toolbar
-			android:id="@+id/tabanim_toolbar"
+			android:id="@+id/toolbar"
 			android:layout_width="match_parent"
 			android:layout_height="?attr/actionBarSize"
 			android:background="?attr/colorPrimary"
 			app:layout_scrollFlags="scroll|enterAlways|snap"
-			app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+			app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+			<Spinner
+				android:id="@+id/filter_spinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:popupBackground="@color/colorPrimary"
+				android:popupElevation="6dp"/>
+
+		</androidx.appcompat.widget.Toolbar>
 	</com.google.android.material.appbar.AppBarLayout>
 
 	<androidx.recyclerview.widget.RecyclerView
@@ -30,22 +38,17 @@
 		android:scrollbars="vertical"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
+	<TextView
+		android:id="@+id/no_plants"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_margin="24dp"
+		android:textSize="56sp"
+		android:textColor="@color/black"
+		android:text="@string/no_plants"
+		android:layout_gravity="center"
+		android:textAlignment="center"
+		android:visibility="gone"
+		/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-<!--	<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout-->
-<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--xmlns:tools="http://schemas.android.com/tools"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--tools:context=".MainActivity">-->
-
-<!--<androidx.recyclerview.widget.RecyclerView-->
-<!--	android:id="@+id/recycler_view"-->
-<!--	android:layout_width="match_parent"-->
-<!--	android:layout_height="match_parent"-->
-<!--	android:scrollbars="vertical"/>-->
-
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
-

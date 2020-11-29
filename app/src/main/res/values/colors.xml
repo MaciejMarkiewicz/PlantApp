@@ -4,6 +4,6 @@
 	<color name="colorPrimaryDark">#388E3C</color>
 	<color name="colorAccent">#974228</color>
 	<color name="black">#FF000000</color>
-	<color name="gradient_semi_black">#66000000</color>
+	<color name="gradient_semi_black">#77000000</color>
 	<color name="white">#FFFFFFFF</color>
 </resources>
