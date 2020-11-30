@@ -5,5 +5,7 @@
 	<color name="colorAccent">#974228</color>
 	<color name="black">#FF000000</color>
 	<color name="gradient_semi_black">#77000000</color>
+	<color name="gradient_semi_black_light">#33000000</color>
+	<color name="gradient_semi_black_dark">#A0000000</color>
 	<color name="white">#FFFFFFFF</color>
 </resources>

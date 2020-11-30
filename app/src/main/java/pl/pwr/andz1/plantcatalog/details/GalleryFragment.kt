@@ -9,8 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import pl.pwr.andz1.plantcatalog.databinding.FragmentGalleryBinding
 
-const val columnCount: Int = 2
-
 class GalleryFragment : Fragment() {
 
     private var _binding: FragmentGalleryBinding? = null
@@ -25,8 +23,7 @@ class GalleryFragment : Fragment() {
         _binding = FragmentGalleryBinding.inflate(inflater, container, false)
 
         binding.apply {
-            galleryList.layoutManager = GridLayoutManager(context, columnCount)
-            galleryList.adapter = GalleryAdapter(model.imageResIds)
+            galleryImage.setImageResource(model.imageResIds[model.galleryPosition])
         }
 
         return binding.root

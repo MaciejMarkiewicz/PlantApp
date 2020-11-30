@@ -3,52 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/galleryImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/black">
-
-        <TextView
-            android:id="@+id/galleryTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:background="@color/colorPrimary"
-            android:text="@string/more_photos"
-            android:textAlignment="viewStart"
-            android:textSize="22sp"
-            android:textColor="@color/white"
-            style="@style/TextAppearance.MaterialComponents.Headline6"
-            app:layout_constraintBottom_toTopOf="@+id/galleryList"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/galleryList"
-            android:name="pl.pwr.andz1.plantcatalog.details.GalleryFragment"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/galleryTitle"
-            tools:context=".details.GalleryFragment"
-            tools:listitem="@layout/fragment_gallery_item" />
-
-        <ImageView
-            android:id="@+id/zoomedImage"
-            android:background="@color/black"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp"
-            android:scaleType="centerCrop"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:scaleType="centerCrop"
+        />
 </layout>

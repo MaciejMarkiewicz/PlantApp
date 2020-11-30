@@ -4,7 +4,7 @@ import android.content.Context
 
 // to simplify things, I set the number of images for all plants to 6,
 // instead of storing it in the plant object
-const val NUMBER_OF_IMAGES = 6
+const val NUMBER_OF_IMAGES = 3
 
 class PlantResourceManager(private val context: Context) {
     fun getCategoryString(category: Plants.Category): String {
@@ -44,11 +44,8 @@ class PlantResourceManager(private val context: Context) {
 
     public fun getPlantImageIds(name: String): List<Int> {
         val ids = mutableListOf<Int>()
-        for (i in 1..NUMBER_OF_IMAGES) {
+        for (i in 1..NUMBER_OF_IMAGES)
             ids.add(getResourceId("plants_${name}_$i", "drawable"))
-            // duplicated just to show the view
-            ids.add(getResourceId("plants_${name}_${NUMBER_OF_IMAGES / 2 - i + 1}", "drawable"))
-        }
         return ids
     }
 
