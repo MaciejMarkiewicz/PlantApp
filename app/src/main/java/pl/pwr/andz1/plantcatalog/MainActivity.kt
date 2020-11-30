@@ -40,9 +40,9 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         ArrayAdapter.createFromResource(
             this,
             R.array.catrgories,
-            R.layout.filter_menu_item
+            R.layout.spinner_menu_item
         ).also { adapter ->
-            adapter.setDropDownViewResource(R.layout.filter_menu_item)
+            adapter.setDropDownViewResource(R.layout.spinner_menu_item)
             spinner.adapter = adapter
         }
         spinner.onItemSelectedListener = this

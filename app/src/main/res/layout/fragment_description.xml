@@ -6,10 +6,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".DescriptionFragment">
+        tools:context=".details.DescriptionFragment">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/plantImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
@@ -22,18 +22,21 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:id="@+id/plantName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/schefflera_full_name"
             android:textColor="@color/white"
             android:layout_marginBottom="16dp"
-            android:theme="@style/TextAppearance.MaterialComponents.Headline3"
-            app:layout_constraintBottom_toTopOf="@+id/textView2"
-            app:layout_constraintStart_toStartOf="@+id/textView2" />
+            android:textSize="48sp"
+            app:layout_constraintBottom_toTopOf="@+id/plantDescription"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/plantDescription" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/plantDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -42,8 +45,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:text="aaaaaaaaaaaaaaaaaaaaaa aaaaaa a aa f sag raeghetrhyrh teh eth trsh strh tt teh tarhj jatrj trj r jsrj srj tsrjrsrsjstrjt srt srtj"
-            android:theme="@style/TextAppearance.MaterialComponents.Body1"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageView2" />
+            app:layout_constraintStart_toStartOf="@+id/plantImage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

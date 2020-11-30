@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Plant Catalog</string>
     <string name="no_plants">No plants, you killed them all!</string>
+    <string name="favourite_only">Favourite only</string>
+    <string name="care_tips">Care tips</string>
+    <string name="more_photos">More photos</string>
 
     <!-- Plant data !-->
     <string name="category_name_palm">Palm</string>
@@ -16,7 +19,6 @@
         <item>Pot plants</item>
     </string-array>
 
-    <!-- Plant data !-->
     <string name="alocasia_full_name">Alocasia pink dragon</string>
     <string name="aloe_full_name">Aloe vera</string>
     <string name="crassula_full_name">Crassula arborescens</string>
@@ -34,8 +36,70 @@
     <string name="sophora_desc">Shphora Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi deleniti deserunt dolores eligendi eveniet expedita facere inventore ipsa magnam maxime molestiae nemo nesciunt rem repellat sequi ullam, vel, velit!</string>
     <string name="schefflera_desc">Schefflera Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores aspernatur debitis, delectus deleniti dolorum facere harum illum itaque libero, magnam maxime minus mollitia nam necessitatibus provident saepe sequi soluta?</string>
     <string name="zamioculcas_desc">Zamioculcas Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores at autem deserunt dolorem, eligendi expedita fugit, illum ipsam laudantium minus necessitatibus officiis quas rem tenetur unde veniam veritatis vero.</string>
-    <string name="favourite_only">Favourite only</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="alocasia_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="aloe_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="crassula_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="palm_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="sansevieria_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="sophora_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="schefflera_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
+    <string-array name="zamioculcas_care_tips">
+        <item>Watering: not much</item>
+        <item>Place: bright sunshine</item>
+        <item>Fertilizing: once a year</item>
+        <item>Soil: universal</item>
+        <item>Likes high temperatures</item>
+        <item>Does not like wind</item>
+    </string-array>
 
 </resources>

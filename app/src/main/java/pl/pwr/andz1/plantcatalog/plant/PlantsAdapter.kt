@@ -26,11 +26,12 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
     var favFilterOn: Boolean = false
         private set
     private var categoryFilter: Plants.Category? = null
+    private val plantResourceManager = PlantResourceManager(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantsAdapter.ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val contactView = inflater.inflate(R.layout.list_item_layout, parent, false)
+        val contactView = inflater.inflate(R.layout.main_list_item_layout, parent, false)
 
         return ViewHolder(contactView)
     }
@@ -40,15 +41,13 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
         val name: String = plant.id_name
 
         val titleView = viewHolder.title
-        titleView.text = context.resources.getString(
-            getResourceId(name + "_full_name", "string")
-        )
+        titleView.text = plantResourceManager.getFullPlantName(name)
 
         val categoryView = viewHolder.category
-        categoryView.text = getCategoryString(plant.category)
+        categoryView.text = plantResourceManager.getCategoryString(plant.category)
 
         val imageView = viewHolder.image
-        imageView.setImageResource(getResourceId("plants_${name}_1", "drawable"))
+        imageView.setImageResource(plantResourceManager.getPlantImageIds(name)[0])
 
         val favButton = viewHolder.favButton
         favButton.setOnClickListener {
@@ -89,7 +88,7 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
     }
 
     fun addCategoryFilter(name: String) {
-        categoryFilter = getCategoryFromName(name)
+        categoryFilter = plantResourceManager.getCategoryFromName(name)
         filter()
     }
 
@@ -110,29 +109,6 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
         notifyDataSetChanged()
     }
 
-    private fun getCategoryString(category: Plants.Category): String {
-        val categoryResourceName: String = when (category) {
-            Plants.Category.POT_PLANT -> "pot_plant"
-            Plants.Category.GREEN -> "green"
-            Plants.Category.SUCCULENT -> "succulent"
-            Plants.Category.PALM -> "palm"
-        }
-
-        return context.resources.getString(
-            getResourceId("category_name_$categoryResourceName", "string")
-        )
-    }
-
-    private fun getCategoryFromName(name: String): Plants.Category? {
-        return when (name) {
-            "Pot plants" -> Plants.Category.POT_PLANT
-            "Green plants" -> Plants.Category.GREEN
-            "Succulents" -> Plants.Category.SUCCULENT
-            "Palms" -> Plants.Category.PALM
-            else -> return null
-        }
-    }
-
     private fun handleFavButton(plant: Plants.Plant, favButton: ImageButton) {
         if (plant.favourite) {
             favButton.setImageResource(R.drawable.ic_fav)
@@ -141,9 +117,5 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
             favButton.setImageResource(R.drawable.ic_fav_empty)
             favButton.isSelected = false
         }
-    }
-
-    private fun getResourceId(name: String, type: String): Int {
-        return context.resources.getIdentifier(name, type, context.packageName)
     }
 }
