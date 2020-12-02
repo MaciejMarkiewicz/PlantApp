@@ -1,8 +1,8 @@
 package pl.pwr.andz1.plantcatalog
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -19,7 +19,7 @@ import pl.pwr.andz1.plantcatalog.plant.PlantResourceManager
 private const val NUM_PAGES_NON_GALLERY = 2
 private const val TOTAL_NUM_PAGES = NUM_PAGES_NON_GALLERY + NUMBER_OF_IMAGES
 
-class DetailsActivity : FragmentActivity() {
+class DetailsActivity : AppCompatActivity() {
 
     private lateinit var viewPager: ViewPager2
     private lateinit var plantName: String

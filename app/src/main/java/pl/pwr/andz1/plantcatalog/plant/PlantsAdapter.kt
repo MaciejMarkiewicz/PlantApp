@@ -23,8 +23,7 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
         val category: TextView = itemView.findViewById(R.id.plant_category)
     }
 
-    var favFilterOn: Boolean = false
-        private set
+    private var favFilterOn: Boolean = false
     private var categoryFilter: Plants.Category? = null
     private val plantResourceManager = PlantResourceManager(context)
 

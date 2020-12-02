@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">Plant Catalog</string>
-    <string name="no_plants">No plants, you killed them all!</string>
+    <string name="no_plants">No plants meet selected criteria.</string>
     <string name="favourite_only">Favourite only</string>
     <string name="care_tips">Care tips</string>
-    <string name="more_photos">More photos</string>
 
     <!-- Plant data !-->
     <string name="category_name_palm">Palm</string>
@@ -11,7 +10,7 @@
     <string name="category_name_green">Green plant</string>
     <string name="category_name_pot_plant">Pot plant</string>
 
-    <string-array name="catrgories">
+    <string-array name="categories">
         <item>All</item>
         <item>Palms</item>
         <item>Succulents</item>
@@ -21,85 +20,83 @@
 
     <string name="alocasia_full_name">Alocasia pink dragon</string>
     <string name="aloe_full_name">Aloe vera</string>
-    <string name="crassula_full_name">Crassula arborescens</string>
+    <string name="crassula_full_name">Jade plant</string>
     <string name="palm_full_name">Aracea palm</string>
     <string name="sansevieria_full_name">Sansevieria trifasciata</string>
-    <string name="sophora_full_name">Sophora prostata</string>
+    <string name="sophora_full_name">Sophora prostrata</string>
     <string name="schefflera_full_name">Schefflera arboricola</string>
     <string name="zamioculcas_full_name">Zamioculcas</string>
 
-    <string name="alocasia_desc">Alocasia Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusamus adipisci, at consequatur debitis deserunt dolore dolorem dolorum enim eum excepturi fugiat illum libero magnam nam sint sit soluta voluptatem.</string>
-    <string name="aloe_desc">Aloe vera Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam animi blanditiis consequuntur delectus earum enim ex harum incidunt itaque libero magni, odit officia quod sed soluta tempora ut vero voluptates.</string>
-    <string name="crassula_desc">Crassula Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis numquam quidem quos repellat totam vel! Amet asperiores culpa exercitationem hic repudiandae voluptas. Atque, dolores doloribus eligendi fuga laudantium minima temporibus!</string>
-    <string name="palm_desc">Palm Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae consequuntur cumque fugiat fugit hic iste laborum maxime neque nisi non optio, pariatur perspiciatis quisquam recusandae veniam veritatis. Doloremque, quas!</string>
-    <string name="sansevieria_desc">Sansevieria Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis doloribus, eum facere fuga harum ipsum libero maiores molestiae natus perspiciatis possimus repellendus suscipit voluptas? Autem iusto maiores officia repudiandae voluptatibus.</string>
-    <string name="sophora_desc">Shphora Lorem ipsum dolor sit amet, consectetur adipisicing elit. A animi deleniti deserunt dolores eligendi eveniet expedita facere inventore ipsa magnam maxime molestiae nemo nesciunt rem repellat sequi ullam, vel, velit!</string>
-    <string name="schefflera_desc">Schefflera Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores aspernatur debitis, delectus deleniti dolorum facere harum illum itaque libero, magnam maxime minus mollitia nam necessitatibus provident saepe sequi soluta?</string>
-    <string name="zamioculcas_desc">Zamioculcas Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores at autem deserunt dolorem, eligendi expedita fugit, illum ipsam laudantium minus necessitatibus officiis quas rem tenetur unde veniam veritatis vero.</string>
+    <string name="alocasia_desc">"Its characteristic features are narrow, heart-shaped, and elongated leaves of dark green color. The leaf impresses with its shiny surface, on which clearly bright, silvery lines of veins are outlined. The most characteristic of Pink Dragon is very decorative, pink-colored, slender, and long petiole."</string>
+    <string name="aloe_desc">"Has valuable healing properties. Aloe vera pulp is a natural germicide, regenerates the mucosa and skin, has anti-inflammatory properties, and stimulates the immune system. Forms a rosette of thick and chunky leaves."</string>
+    <string name="crassula_desc">"Colloquially known as the "tree of happiness". The characteristic thing is small oval-shaped leaves. The leaf blades are decorated with a delicate burgundy rim. The plant is very easy to grow and does not require special care."</string>
+    <string name="palm_desc">"A potted plant with beautiful, light green, feathery leaves. In nature, this species appears in the tropical forests of southern Mexico and Guatemala, where it grows under a crown of tall trees. This species grows very slowly, releasing about 2–3 leaves per year."</string>
+    <string name="sansevieria_desc">"Sansevieria, due to its incredible resistance to water shortage, is called the "iron plant". What Sansievierias have in common is that they adapt well to harsh conditions. It's a very fashionable indoor plant with versatile use, it fits perfectly into modern interiors."</string>
+    <string name="sophora_desc">"Sophora prostrata comes from New Zealand and is a small shrub that under proper conditions reaches 1,5 m height and 1 m width. Its greatest decoration is unusual twisted sprigs, thanks to which the plant gains an original and very decorative appearance. It grows quite slowly and can be grown as a natural bonsai tree."</string>
+    <string name="schefflera_desc">"It distinguishes itself by short growth and beautiful leaf color. It creates a straight and dense habit with decorative leafy sprigs. They captivate with their beautiful and uneven color and pinnate-complex shape."</string>
+    <string name="zamioculcas_desc">"It's an indoor plant with low needings, very resistant to neglect, and harsh conditions. This interesting specimen can be found in eastern and north-eastern Africa, where the climate is dry, equatorial. It's an elegant interior decoration and doesn't grow too dynamically."</string>
 
     <string-array name="alocasia_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Likes a lot of water and high air humidity. It's advisable to spritz the leaves with water quite often"</item>
+        <item>"Place: Bright, but not with direct sunlight"</item>
+        <item>"Repotting: When the space for the root system in the pot is too small"</item>
+        <item>"Soil: Light, with drainage"</item>
+        <item>"Likes high temperatures"</item>
+        <item>"Does not like wind"</item>
     </string-array>
     <string-array name="aloe_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Rarely, only when the top layer of soil is dry"</item>
+        <item>"Place: Bright or partial shade"</item>
+        <item>"Repotting: When the space for the root system in the pot is too small"</item>
+        <item>"Soil: Light, with drainage"</item>
+        <item>"Likes medium temperatures"</item>
+        <item>"Reacts badly to overwatering"</item>
     </string-array>
     <string-array name="crassula_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Rarely, only when the top layer of soil is dry"</item>
+        <item>"Place: Bright or partial shade"</item>
+        <item>"Repotting: When the space for the root system in the pot is too small"</item>
+        <item>"Soil: Light, with drainage"</item>
+        <item>"Reacts badly to overwatering"</item>
     </string-array>
     <string-array name="palm_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Likes a lot of water and high air humidity. It's advisable to spritz the leaves with water quite often"</item>
+        <item>"Place: Bright sunshine"</item>
+        <item>"Repotting: Avoid. Only when the space for the root system in the pot is visibly too small"</item>
+        <item>"Soil: Universal"</item>
+        <item>"Likes high temperatures"</item>
+        <item>"Does not like wind"</item>
     </string-array>
     <string-array name="sansevieria_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Rarely, only when the top layer of soil is dry"</item>
+        <item>"Place: Bright or partial shade"</item>
+        <item>"Repotting: When the space for the root system in the pot is too small"</item>
+        <item>"Soil: Universal"</item>
+        <item>"Does not like high temperatures"</item>
+        <item>"Does not like wind"</item>
     </string-array>
     <string-array name="sophora_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Likes high air humidity. Bottom watering is recommended. Do not sprinkle the leaves (causes rotting)."</item>
+        <item>"Place: Bright, but not with direct sunlight"</item>
+        <item>"Repotting: Avoid. Only when the space for the root system in the pot is visibly too small"</item>
+        <item>"Soil: Light, with drainage and coconut chips"</item>
+        <item>"Likes medium temperatures"</item>
+        <item>"Reacts badly to frequent touching"</item>
     </string-array>
     <string-array name="schefflera_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Likes a lot of water and high air humidity. It's advisable to spritz the leaves with water quite often"</item>
+        <item>"Place: Bright sunshine"</item>
+        <item>"Repotting: When the space for the root system in the pot is too small"</item>
+        <item>"Soil: Light, with drainage and coconut chips"</item>
+        <item>"Reacts badly to overwatering"</item>
+        <item>"Does not like wind"</item>
     </string-array>
     <string-array name="zamioculcas_care_tips">
-        <item>Watering: not much</item>
-        <item>Place: bright sunshine</item>
-        <item>Fertilizing: once a year</item>
-        <item>Soil: universal</item>
-        <item>Likes high temperatures</item>
-        <item>Does not like wind</item>
+        <item>"Watering: Not much"</item>
+        <item>"Place: Bright, partial shade or shade"</item>
+        <item>"Repotting: When the space for the root system in the pot is too small"</item>
+        <item>"Soil: Universal or light with drainage"</item>
+        <item>"Very resistant to neglect"</item>
     </string-array>
 
 </resources>

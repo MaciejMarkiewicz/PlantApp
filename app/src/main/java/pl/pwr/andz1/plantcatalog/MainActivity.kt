@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         val spinner: Spinner = findViewById(R.id.filter_spinner)
         ArrayAdapter.createFromResource(
             this,
-            R.array.catrgories,
+            R.array.categories,
             R.layout.spinner_menu_item
         ).also { adapter ->
             adapter.setDropDownViewResource(R.layout.spinner_menu_item)
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         if (favFilterState) {
             favFilterState = false
-            filterFavourites(menu?.findItem(R.id.only_fav)!!)
+            onFilterFavourites(menu?.findItem(R.id.only_fav)!!)
         }
 
         return true
@@ -74,14 +74,14 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.only_fav -> {
-                filterFavourites(item)
+                onFilterFavourites(item)
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun filterFavourites(item: MenuItem) {
+    private fun onFilterFavourites(item: MenuItem) {
         if (favFilterState) {
             item.setIcon(R.drawable.ic_fav_empty)
             plantsAdapter.removeFavFilter()

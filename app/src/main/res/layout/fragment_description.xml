@@ -27,9 +27,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="32dp"
-            android:text="@string/schefflera_full_name"
+            android:lineSpacingMultiplier="0.85"
+            android:text="@string/sophora_full_name"
             android:textColor="@color/white"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:textSize="48sp"
             app:layout_constraintBottom_toTopOf="@+id/plantDescription"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +45,7 @@
             android:layout_marginEnd="32dp"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:text="aaaaaaaaaaaaaaaaaaaaaa aaaaaa a aa f sag raeghetrhyrh teh eth trsh strh tt teh tarhj jatrj trj r jsrj srj tsrjrsrsjstrjt srt srtj"
+            android:text="@string/schefflera_desc"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/plantImage" />
     </androidx.constraintlayout.widget.ConstraintLayout>
