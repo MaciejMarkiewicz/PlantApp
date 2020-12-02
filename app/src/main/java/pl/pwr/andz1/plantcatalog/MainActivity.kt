@@ -6,51 +6,49 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import android.widget.ArrayAdapter
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import pl.pwr.andz1.plantcatalog.databinding.ActivityMainBinding
 import pl.pwr.andz1.plantcatalog.plant.Plants
 import pl.pwr.andz1.plantcatalog.plant.PlantsAdapter
 
 
-const val FAV_STATE: String = "FAV_STATE"
-
 class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private lateinit var plantsAdapter: PlantsAdapter
-    private var favFilterState: Boolean = false
+    private lateinit var binding: ActivityMainBinding
+    private val model: MainViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        favFilterState = savedInstanceState?.getBoolean(FAV_STATE, false) ?: false
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val recyclerView = findViewById<View>(R.id.recycler_view) as RecyclerView
-        plantsAdapter = PlantsAdapter(Plants.plants, this)
-        recyclerView.adapter = plantsAdapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        addSwipeDeleteAction(plantsAdapter, recyclerView)
+        binding.apply {
+            plantsAdapter = PlantsAdapter(Plants.plants, this@MainActivity)
+            recyclerView.adapter = plantsAdapter
+            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            addSwipeDeleteAction(plantsAdapter, recyclerView)
 
-        val toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+            setSupportActionBar(toolbar)
+            supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val spinner: Spinner = findViewById(R.id.filter_spinner)
-        ArrayAdapter.createFromResource(
-            this,
-            R.array.categories,
-            R.layout.spinner_menu_item
-        ).also { adapter ->
-            adapter.setDropDownViewResource(R.layout.spinner_menu_item)
-            spinner.adapter = adapter
+            ArrayAdapter.createFromResource(
+                this@MainActivity,
+                R.array.categories,
+                R.layout.spinner_menu_item
+            ).also { adapter ->
+                adapter.setDropDownViewResource(R.layout.spinner_menu_item)
+                filterSpinner.adapter = adapter
+            }
+            filterSpinner.onItemSelectedListener = this@MainActivity
         }
-        spinner.onItemSelectedListener = this
-    }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putBoolean(FAV_STATE, favFilterState)
     }
 
     override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
@@ -63,8 +61,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_filter, menu)
 
-        if (favFilterState) {
-            favFilterState = false
+        if (model.favFilterState) {
+            model.favFilterState = false
             onFilterFavourites(menu?.findItem(R.id.only_fav)!!)
         }
 
@@ -82,7 +80,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     }
 
     private fun onFilterFavourites(item: MenuItem) {
-        if (favFilterState) {
+        if (model.favFilterState) {
             item.setIcon(R.drawable.ic_fav_empty)
             plantsAdapter.removeFavFilter()
         } else {
@@ -90,7 +88,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             plantsAdapter.addFavFilter()
         }
 
-        favFilterState = !favFilterState
+        model.favFilterState = !model.favFilterState
         handleNoPlants()
     }
 
@@ -111,9 +109,12 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
     private fun handleNoPlants() {
         if (plantsAdapter.isEmpty())
-            findViewById<TextView>(R.id.no_plants).visibility = View.VISIBLE
+            binding.noPlants.visibility = View.VISIBLE
         else
-            findViewById<TextView>(R.id.no_plants).visibility = View.GONE
+            binding.noPlants.visibility = View.GONE
     }
 }
 
+class MainViewModel : ViewModel() {
+    var favFilterState: Boolean = false
+}
