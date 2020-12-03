@@ -14,7 +14,7 @@ import pl.pwr.andz1.plantcatalog.R
 
 const val PLANT_NAME_KEY = "pl.pwr.andz1.plantcatalog.PLANT_NAME"
 
-class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val context: Context) :
+class PlantsAdapter(private val model: PlantsViewModel, private val context: Context) :
     RecyclerView.Adapter<PlantsAdapter.ViewHolder>() {
     inner class ViewHolder(listItemView: View) : RecyclerView.ViewHolder(listItemView) {
         val image: ImageView = itemView.findViewById(R.id.image_view)
@@ -23,8 +23,6 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
         val category: TextView = itemView.findViewById(R.id.plant_category)
     }
 
-    private var favFilterOn: Boolean = false
-    private var categoryFilter: Plants.Category? = null
     private val plantResourceManager = PlantResourceManager(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantsAdapter.ViewHolder {
@@ -36,7 +34,7 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
     }
 
     override fun onBindViewHolder(viewHolder: PlantsAdapter.ViewHolder, position: Int) {
-        val plant: Plants.Plant = plants[position]
+        val plant: Plant = model.plants[position]
         val name: String = plant.id_name
 
         val titleView = viewHolder.title
@@ -65,50 +63,10 @@ class PlantsAdapter(private val plants: MutableList<Plants.Plant>, private val c
     }
 
     override fun getItemCount(): Int {
-        return plants.size
+        return model.plants.size
     }
 
-    fun removeAt(position: Int) {
-        Plants.removePlant(position)
-    }
-
-    fun isEmpty(): Boolean {
-        return plants.isEmpty()
-    }
-
-    fun removeFavFilter() {
-        favFilterOn = false
-        filter()
-    }
-
-    fun addFavFilter() {
-        favFilterOn = true
-        filter()
-    }
-
-    fun addCategoryFilter(name: String) {
-        categoryFilter = plantResourceManager.getCategoryFromName(name)
-        filter()
-    }
-
-    private fun filter() {
-        val categoryPredicate: (Plants.Plant) -> Boolean = if (categoryFilter == null) {
-            { true }
-        } else {
-            { plant: Plants.Plant -> plant.category == categoryFilter }
-        }
-
-        val favPredicate: (Plants.Plant) -> Boolean = if (favFilterOn) {
-            { plant: Plants.Plant -> plant.favourite }
-        } else {
-            { true }
-        }
-
-        Plants.filterPlants { plant: Plants.Plant -> categoryPredicate(plant) && favPredicate(plant) }
-        notifyDataSetChanged()
-    }
-
-    private fun handleFavButton(plant: Plants.Plant, favButton: ImageButton) {
+    private fun handleFavButton(plant: Plant, favButton: ImageButton) {
         if (plant.favourite) {
             favButton.setImageResource(R.drawable.ic_fav)
             favButton.isSelected = true

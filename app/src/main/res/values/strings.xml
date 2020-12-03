@@ -12,9 +12,9 @@
 
     <string-array name="categories">
         <item>All</item>
+        <item>Green plants</item>
         <item>Palms</item>
         <item>Succulents</item>
-        <item>Green plants</item>
         <item>Pot plants</item>
     </string-array>
 
