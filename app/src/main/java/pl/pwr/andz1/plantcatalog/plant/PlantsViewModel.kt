@@ -55,6 +55,7 @@ class PlantsViewModel : ViewModel() {
     fun removePlantAt(index: Int) {
         plantsWithoutRemoved.remove(plants[index])
         resetPlants()
+        filterPlants()
     }
 
     private fun resetPlants() {
