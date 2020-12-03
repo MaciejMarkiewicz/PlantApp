@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, dir: Int) {
                 model.removePlantAt(viewHolder.adapterPosition)
-                adapter.notifyDataSetChanged()
+                adapter.notifyItemRemoved(viewHolder.adapterPosition)
                 handleNoPlants()
             }
         }).attachToRecyclerView(recyclerView)
